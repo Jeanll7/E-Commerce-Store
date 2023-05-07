@@ -1,0 +1,3 @@
+cd .\src\app\components
+
+ng g c header
