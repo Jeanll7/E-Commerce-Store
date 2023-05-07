@@ -1,5 +1,21 @@
-<mat-toolbar class="justify-between max-w-7xl mx-auto border-x">
-    <a routerLink="home">Code store</a>
-    <mat-icon>shopping_cart</mat-icon>
-
+<mat-toolbar class="justify-between max-w-7xl mx-auto border-x bg-teal-100">
+    <a routerLink="home">Garbux  store</a>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon 
+        [matBadge]="1" 
+        matBadgeColor="warn"
+      >shopping_cart</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <div class="p-3 divide-y divide-solid">
+            <div class="pb-3 flex justify-between">
+                <span class="mr-16">1 Item</span>
+                <a routerLink="cart">Ver Card</a>
+            </div>
+            <div class="flex justify-between font-light mb-2">
+                keyboard x 1
+                <span class="font-bold">{{ '150' | currency }}</span>
+            </div>
+        </div>
+    </mat-menu>
 </mat-toolbar>
