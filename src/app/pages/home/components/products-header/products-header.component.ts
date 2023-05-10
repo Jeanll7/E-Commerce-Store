@@ -5,7 +5,12 @@ import { Component } from "@angular/core";
   templateUrl: "products-header.components.html",
 })
 export class ProductsHeaderComponent {
-  sort = "sort";
+  sort = "desc";
+  itemsShowCount = 12;
 
   constructor() {}
+
+  onSortUpdated(newSort: string): void {
+    this.sort = newSort;
+  }
 }
