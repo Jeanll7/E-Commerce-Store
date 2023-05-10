@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-products-header',
-  template: `
-    <p>
-      products-header works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: "app-products-header",
+  templateUrl: "products-header.components.html",
 })
 export class ProductsHeaderComponent {
+  sort = "sort";
 
+  constructor() {}
 }
