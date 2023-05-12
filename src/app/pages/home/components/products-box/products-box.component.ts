@@ -1,15 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-products-box',
-  template: `
-    <p>
-      products-box works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: "app-products-box",
+  templateUrl: "./products-box.components.html",
 })
-export class ProductsBoxComponent {
+export class ProductsBoxComponent implements OnInit {
+  @Input() fullWidthMode = false;
+  constructor() {}
 
+  ngOnInit(): void {}
 }
