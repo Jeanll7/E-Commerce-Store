@@ -1,0 +1,9 @@
+<mat-card class="mt-4 bg-black" *ngIf="cart.items.length">
+
+</mat-card>
+<mat-card class="pl-3 mt-6" *ngIf="!cart.items.length">
+    <p>
+        Seu carrinho está vazio.
+        <button mat-raised-button routerLink="/home">Comece a comprar</button>
+    </p>
+</mat-card>
