@@ -6,9 +6,19 @@ import { Cart, CartItem } from "src/app/models/cart.model";
   templateUrl: "./cart.component.html",
 })
 export class CartComponent implements OnInit {
-  cart: Cart = { items: [] };
+  cart: Cart = {
+    items: [
+      {
+        product: "https://via.placeholder.com/150",
+        name: "snickers",
+        price: 150,
+        quantity: 1,
+        id: 1,
+      },
+    ],
+  };
   dataSource: Array<CartItem> = [];
-  displayedColumuns: Array<string> = [
+  displayedColumns: Array<string> = [
     "product",
     "name",
     "price",

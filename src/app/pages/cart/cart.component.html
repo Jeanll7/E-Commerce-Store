@@ -1,7 +1,15 @@
-<mat-card class="mt-4 bg-black" *ngIf="cart.items.length">
+<mat-card class="max-w-7xl mx-auto" *ngIf="cart.items.length">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-full">
+        <ng-container>
 
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRow="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        <tr mat-footer-row *matFooterRowDef="">displayedColumns</tr>
+    </table>
 </mat-card>
-<mat-card class="pl-3 mt-6" *ngIf="!cart.items.length">
+<mat-card class="max-w-7xl mx-auto" *ngIf="!cart.items.length">
     <p>
         Seu carrinho está vazio.
         <button mat-raised-button routerLink="/home">Comece a comprar</button>
