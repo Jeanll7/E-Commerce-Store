@@ -15,6 +15,13 @@ export class CartComponent implements OnInit {
         quantity: 1,
         id: 1,
       },
+      {
+        product: "https://via.placeholder.com/150",
+        name: "snickers",
+        price: 150,
+        quantity: 2,
+        id: 2,
+      },
     ],
   };
   dataSource: Array<CartItem> = [];

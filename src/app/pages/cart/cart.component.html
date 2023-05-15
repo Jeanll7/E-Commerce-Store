@@ -23,12 +23,20 @@
         </ng-container>
         <ng-container matColumnDef="quantity">
             <th mat-header-cell *matHeaderCellDef>Quantidade</th>
-            <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button>
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span>{{ element.quantity }}</span>
+                <button mat-icon-button>
+                  <mat-icon>add</mat-icon>
+                </button>
+            </td>
             <td mat-footer-cell *matFooterCellDef></td>
         </ng-container>
         <ng-container matColumnDef="total">
             <th mat-header-cell *matHeaderCellDef>Total</th>
-            <td mat-cell *matCellDef="let element">{{ element.total }}</td>
+            <td mat-cell *matCellDef="let element">{{ (element.quantity * element.price) | currency }}</td>
             <td mat-footer-cell *matFooterCellDef>
                 <span class="font-bold py-5 block">
                 {{ getTotal(cart.items) | currency }}
@@ -36,15 +44,20 @@
             </td>
         </ng-container>
         <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef>Acão</th>
-            <td mat-cell *matCellDef="let element">{{ element.total }}</td>
+            <th mat-header-cell *matHeaderCellDef>
+                <button mat-raised-button color="warn" class="float-right">
+                Limpar
+              </button>
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-mini-fab color="warn" class="float-right">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </td>
             <td mat-footer-cell *matFooterCellDef>
-                <span class="font-bold py-5 block">
-                {{ getTotal(cart.items) | currency }}
-              </span>
+
             </td>
         </ng-container>
-
 
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
