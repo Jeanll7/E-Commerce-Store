@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Product } from "src/app/models/product.model";
 
 @Component({
   selector: "app-products-box",
@@ -6,11 +7,22 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class ProductsBoxComponent implements OnInit {
   @Input() fullWidthMode = false;
-  // product: Product;
+  product: Product | undefined = {
+    id: 1,
+    title: "Snickers",
+    price: 150,
+    category: "Shoes",
+    description: "Description",
+    image: "https://via.placeholder.com/150",
+  };
+
+  @Output() addToCart = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onAddToCart(): void {}
+  onAddToCart(): void {
+    this.addToCart.emit(this.product);
+  }
 }
