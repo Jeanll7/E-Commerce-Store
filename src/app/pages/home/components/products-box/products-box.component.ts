@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Product } from "src/app/models/product.model";
 
 @Component({
-  selector: "app-products-box",
+  selector: "app-product-box",
   templateUrl: "./products-box.components.html",
 })
 export class ProductsBoxComponent implements OnInit {

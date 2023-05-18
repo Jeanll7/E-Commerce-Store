@@ -11,7 +11,7 @@ export class CartService {
 
   constructor(private _snackBar: MatSnackBar) {}
 
-  addTtoCart(item: CartItem): void {
+  addToCart(item: CartItem): void {
     const items = [...this.cart.value.items];
 
     const itemInCart = items.find((_item) => _item.id === item.id);
@@ -23,7 +23,7 @@ export class CartService {
     }
 
     this.cart.next({ items });
-    this._snackBar.open("1 Item adicionado ao carrinho", "Desfazer", {
+    this._snackBar.open("1 Item adicionado ao carrinho", "OK", {
       duration: 3000,
     });
     console.log(this.cart.value);
