@@ -1,15 +1,35 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Cart } from "src/app/models/cart.model";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   private _cart: Cart = { items: [] };
   itemsQuantity = 0;
 
-  constructor() {}
+  @Input()
+  get cart(): Cart {
+    return this._cart;
+  }
 
-  ngOnInit(): void {}
+  set cart(cart: Cart) {
+    this._cart = cart;
+
+    this.itemsQuantity = cart.items
+      .map((item) => item.quantity)
+      .reduce((prev, current) => prev + current, 0);
+  }
+
+  // set cart(cart: Cart) {
+  //   this._cart = cart;
+
+  //   this.itemsQuantity = cart.items.reduce(
+  //     (prev, current) => prev + current.quantity,
+  //     0
+  //   );
+  // }
+
+  constructor() {}
 }
